@@ -22,6 +22,10 @@ This project was built from scratch without templates, fulfilling the Stardance 
 - **Vanilla JavaScript**: DOM manipulation, asynchronous API requests with `async`/`await`, and real-time clock logic.
 - **Vite**: Frontend tooling and environment variable management.
 
+## Live Demo
+
+https://charles-pyt.github.io/apod/
+
 ## How to Run Locally
 
 1. **Clone the repository:**
