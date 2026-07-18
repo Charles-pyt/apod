@@ -1,0 +1,139 @@
+:root {
+  --bg-color: #050505;
+  --text-main: #e0e0e0;
+  --text-dim: #888888;
+  --border-color: #333333;
+  --accent-color: #ff4a00;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dataPicker {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+#dataPicker:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+#app {
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(255, 255, 255, 0.01) 1px,
+    rgba(255, 255, 255, 0.01) 2px
+  );
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  color: var(--text-main);
+}
+
+img,
+iframe {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+  background-color: #000;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+img:hover {
+  filter: grayscale(0%);
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+}
+
+.explanation {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+  text-align: left;
+  border-left: 2px solid var(--accent-color);
+  padding-left: 1rem;
+}
+
+/* États du système */
+.loading::before {
+  content: "[ SYS ] ";
+  color: var(--accent-color);
+}
+.loading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  animation: blink 1s infinite;
+}
+
+.error {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  #app {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+}
