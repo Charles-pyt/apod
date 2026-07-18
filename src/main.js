@@ -5,6 +5,20 @@ console.log("Welcome on APOD Console");
 const appContainer = document.querySelector("#app");
 const datePicker = document.querySelector("#dataPicker");
 
+// Dashboard with clock
+const clockElement = document.querySelector("#sys-clock");
+
+const updateClock = () => {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+};
+
+setInterval(updateClock, 1000);
+updateClock();
+
 // Enable date picker to select a future date
 datePicker.max = new Date().toISOString().split("T")[0];
 

@@ -24,6 +24,49 @@ body {
   align-items: center;
 }
 
+#dashboard-bar {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#sys-clock {
+  font-size: 2rem;
+  color: var(--accent-color);
+  letter-spacing: 4px;
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 2rem;
+}
+
+#search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+#search-input:focus {
+  outline: none;
+}
+
+#search-input::placeholder {
+  color: var(--text-dim);
+}
+
 #dataPicker {
   background-color: transparent;
   color: var(--text-main);
@@ -58,6 +101,17 @@ body {
   );
 }
 
+#sponsor-footer {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 h1 {
   font-size: 1.5rem;
   font-weight: normal;
@@ -89,6 +143,13 @@ iframe {
   aspect-ratio: 16 / 9;
 }
 
+.prompt-symbol {
+  color: var(--accent-color);
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  animation: blink 1s infinite;
+}
+
 .explanation {
   font-size: 0.95rem;
   line-height: 1.8;
@@ -98,7 +159,6 @@ iframe {
   padding-left: 1rem;
 }
 
-/* États du système */
 .loading::before {
   content: "[ SYS ] ";
   color: var(--accent-color);
@@ -108,7 +168,51 @@ iframe {
   text-transform: uppercase;
   animation: blink 1s infinite;
 }
+.sponsor-text {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+.sponsor-logos {
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* Remove global images styles only for logos */
+img.sponsor-img {
+  height: 60px;
+  width: auto;
+  max-height: none;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+  filter: grayscale(80%) opacity(40%);
+  transition:
+    filter 0.3s ease,
+    transform 0.25s ease;
+  transform: scale(1.05);
+}
 
+/* Individual scale */
+
+img.sponsor-img[alt="NASA"] {
+  height: 100px;
+}
+
+img.sponsor-img[alt="Hack Club"] {
+  height: 60px;
+}
+
+img.sponsor-img[alt="AMD"] {
+  height: 60px;
+}
+
+img.sponsor-img:hover {
+  filter: grayscale(0%) opacity(100%);
+  cursor: pointer;
+}
 .error {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);

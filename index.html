@@ -2,14 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="stylesheet" href="/src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>apod</title>
   </head>
   <body>
-    <input type="date" id="dataPicker" />
+    <div id="dashboard-bar">
+      <div id="sys-clock">00:00:00</div>
+      <form id="search-form" action="https://duckduckgo.com/" method="get">
+        <span class="prompt-symbol">&gt;</span>
+        <input
+          type="text"
+          name="q"
+          id="search-input"
+          placeholder="SEARCH SYSTEM..."
+          autocomplete="off"
+          autofocus
+        />
+      </form>
+    </div>
+    <div class="date-container">
+      <label for="dataPicker">ENTER A DATE :</label>
+      <input type="date" id="dataPicker" />
+    </div>
     <div id="app"></div>
+    <footer id="sponsor-footer">
+      <span class="sponsor-text">SYS.POWERED_BY</span>
+      <div class="sponsor-logos">
+        <img
+          src="/src/assets/hackclub.svg"
+          alt="Hack Club"
+          class="sponsor-img"
+        />
+        <img src="/src/assets/nasa.webp" alt="NASA" class="sponsor-img" />
+        <img src="/src/assets/amd.svg" alt="AMD" class="sponsor-img" />
+      </div>
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
